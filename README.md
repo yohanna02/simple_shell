@@ -1,5 +1,5 @@
 # C-Simple-Shell
-simple shell with C by [Yohanna](https://github.com/yohanna02) and [Binadam442](https://github.com/Binadam442)
+simple shell with C by [Yohanna](https://github.com/yohanna02) and [Muhammad Sunusi Adam](https://github.com/Binadam442)
 
 ## Compiled command
 ```bash
