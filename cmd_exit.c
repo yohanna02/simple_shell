@@ -16,11 +16,11 @@ void print_exit_error(info_t *shell_data, char *code)
 }
 
 /**
- * __exit - exit from shell
+ * cmd_exit - exit from shell
  * @shell_data: shell data
  * Return: void
 */
-void __exit(info_t *shell_data)
+void cmd_exit(info_t *shell_data)
 {
 	char *token;
 	char *string_copy = NULL;

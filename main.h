@@ -30,6 +30,7 @@ typedef struct info
 	int interactive;
 	char shell_name[5];
 	int exit_code;
+	char **environ;
 } info_t;
 
 /**
@@ -65,9 +66,11 @@ void *_malloc(size_t size);
 char *_strdup(const char *s);
 void run_cmd(info_t *);
 void _exec(info_t *);
-void __exit(info_t *);
-void _env(info_t *);
-void _setenv(info_t *);
+void cmd_exit(info_t *);
+void cmd_env(info_t *);
+void cmd_setenv(info_t *);
+int _setenv(char *name, char *value, int overwrite);
+void init_env(info_t *);
 int _atoi(char *s);
 int is_valid_number(const char *str);
 ssize_t _getline(char **lineptr, size_t *n, FILE *stream);

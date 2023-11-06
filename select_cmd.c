@@ -11,9 +11,9 @@ void (*select_cmd(char *cmd))(info_t *)
 	char *copy_cmd = _strdup(cmd);
 	char *token;
 	command_t _commands[] = {
-		{"exit", __exit},
-		{"env", _env},
-		{"setenv", _setenv},
+		{"exit", cmd_exit},
+		{"env", cmd_env},
+		{"setenv", cmd_setenv},
 		{NULL, NULL}
 	};
 
