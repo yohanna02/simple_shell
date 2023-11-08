@@ -14,6 +14,7 @@ void (*select_cmd(char *cmd))(info_t *)
 		{"exit", cmd_exit},
 		{"env", cmd_env},
 		{"setenv", cmd_setenv},
+		{"cd", cmd_cd},
 		{NULL, NULL}
 	};
 

@@ -12,7 +12,7 @@ int main(__attribute__((unused)) int ac, char **av)
 	ssize_t read;
 	size_t len = 0;
 	info_t shell_data = {
-		NULL, 1, "\0", 0, 0, NULL
+		NULL, 1, "\0", 0, 0
 	};
 
 	init_env(&shell_data);

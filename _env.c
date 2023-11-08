@@ -10,7 +10,7 @@
 */
 void init_env(info_t *shell_data)
 {
-
+	UNUSED(shell_data);
 }
 
 /**

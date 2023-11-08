@@ -74,5 +74,7 @@ void init_env(info_t *);
 int _atoi(char *s);
 int is_valid_number(const char *str);
 ssize_t _getline(char **lineptr, size_t *n, FILE *stream);
+int _cd(const char *path);
+void cmd_cd(info_t *shell_data);
 
 #endif /* __MAIN_H__ */
