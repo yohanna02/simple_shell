@@ -14,13 +14,13 @@ void cd_only(info_t *shell_data)
 
 	if (home_dir == NULL)
 	{
-		dprintf(STDERR_FILENO, "%s: cd: HOME not set\n",
+		_dprintf(STDERR_FILENO, "%s: cd: HOME not set\n",
 		shell_data->shell_name);
 		return;
 	}
 	if (_cd(home_dir) == -1)
 	{
-		dprintf(STDERR_FILENO, "%s: cd: Failed\n",
+		_dprintf(STDERR_FILENO, "%s: cd: Failed\n",
 		shell_data->shell_name);
 	}
 }
@@ -36,17 +36,17 @@ void cd_old_dir(info_t *shell_data)
 
 	if (old_dir == NULL)
 	{
-		dprintf(STDERR_FILENO, "%s: cd: OLDPWD not set\n",
+		_dprintf(STDERR_FILENO, "%s: cd: OLDPWD not set\n",
 		shell_data->shell_name);
 		return;
 	}
 	if (_cd(old_dir) == -1)
 	{
-		dprintf(STDERR_FILENO, "%s: cd: Failed\n",
+		_dprintf(STDERR_FILENO, "%s: cd: Failed\n",
 		shell_data->shell_name);
 		return;
 	}
-	dprintf(STDOUT_FILENO, "%s\n", old_dir);
+	_dprintf(STDOUT_FILENO, "%s\n", old_dir);
 }
 
 /**
@@ -74,14 +74,14 @@ void cmd_cd(info_t *shell_data)
 				!(sb.st_mode & S_IWUSR) ||
 				!(sb.st_mode & S_IXUSR))
 			{
-				dprintf(STDERR_FILENO, "%s: cd: %s: Permission denied\n",
+				_dprintf(STDERR_FILENO, "%s: cd: %s: Permission denied\n",
 				shell_data->shell_name, path);
 			}
 			else
 			{
 				if (_cd(path) == -1)
 				{
-					dprintf(STDERR_FILENO, "%s: cd: Failed\n",
+					_dprintf(STDERR_FILENO, "%s: cd: Failed\n",
 					shell_data->shell_name);
 					free_multiple(1, command);
 					return;
@@ -90,7 +90,7 @@ void cmd_cd(info_t *shell_data)
 		}
 		else
 		{
-			dprintf(STDERR_FILENO, "%s: cd: %s: No such file or directory\n",
+			_dprintf(STDERR_FILENO, "%s: cd: %s: No such file or directory\n",
 			shell_data->shell_name, path);
 		}
 	}

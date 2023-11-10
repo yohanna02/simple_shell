@@ -77,4 +77,27 @@ ssize_t _getline(char **lineptr, size_t *n, FILE *stream);
 int _cd(const char *path);
 void cmd_cd(info_t *shell_data);
 
+/* Custom Print function */
+#define BUFFER_SIZE 1024
+
+int add_to_buffer(int fd, char *buffer, int *buffer_index, char c);
+void flush_buffer(int fd, char *buffer, int *buffer_index);
+
+/**
+ * struct spec  - specifier structure
+ * @specifier: format specifier
+ * @f: format specifier function
+*/
+typedef struct spec
+{
+	char specifier;
+	int (*f)(int, va_list, char *, int *);
+} specifier_t;
+
+int _dprintf(int fd, const char *format, ...);
+int (*select_specifier(char specifier))(int, va_list, char *, int *);
+int print_string(int, va_list, char *, int *);
+int print_char(int, va_list, char *, int *);
+int print_number(int, va_list, char *, int *);
+
 #endif /* __MAIN_H__ */

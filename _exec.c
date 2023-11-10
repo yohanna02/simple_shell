@@ -53,7 +53,7 @@ int invalid_argv(char **argv, info_t *shell_data)
 */
 void handle_path_null(char *full_path, char **argv, info_t *shell_data)
 {
-	dprintf(STDERR_FILENO, "%s: 1: %s: not found\n",
+	_dprintf(STDERR_FILENO, "%s: 1: %s: not found\n",
 	shell_data->shell_name, argv[0]);
 	free_array((void **)argv, count_array_size(argv));
 	if (shell_data->interactive == 0)

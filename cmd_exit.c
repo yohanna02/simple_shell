@@ -11,7 +11,7 @@
 */
 void print_exit_error(info_t *shell_data, char *code)
 {
-	dprintf(STDERR_FILENO, "%s: 1: exit: Illegal number: %s\n",
+	_dprintf(STDERR_FILENO, "%s: 1: exit: Illegal number: %s\n",
 	shell_data->shell_name, code);
 }
 

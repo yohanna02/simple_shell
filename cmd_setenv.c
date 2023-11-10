@@ -15,7 +15,7 @@ void cmd_setenv(info_t *shell_data)
 	value = _strtok(NULL, " ");
 	if (_setenv(name, value, 1) == -1)
 	{
-		dprintf(STDERR_FILENO, "%s: 1: setenv: Illegal argument\n",
+		_dprintf(STDERR_FILENO, "%s: 1: setenv: Illegal argument\n",
 		shell_data->shell_name);
 	}
 	free_multiple(1, string_copy);
